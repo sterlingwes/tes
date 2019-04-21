@@ -1,7 +1,8 @@
-import { readDir } from "deno";
 import { getTestsFromModule } from "./gather.ts";
 import { TestModule } from "./interfaces.ts";
 import { isLocalDirectory } from "./misc.ts";
+
+const { readDir } = Deno;
 
 export async function* getTests(path: string): AsyncIterableIterator<TestModule> {
 	if (await isLocalDirectory(path)) {

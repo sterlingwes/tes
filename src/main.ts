@@ -1,11 +1,12 @@
 #!/usr/bin/env deno
 
-import { args, exit, cwd } from "deno";
 import { getTests } from "./gather-deno.ts";
 import { collectAsync } from "https://cdn.rawgit.com/qoh/utility/v0.0.1/src/iterable.ts";
 import { runTestModules } from "./run.ts";
 import { displayResults } from "./display.ts";
 import { isLocalDirectory } from "./misc.ts";
+
+const { args, exit, cwd } = Deno;
 
 export async function main() {
 	const { entryPath } = await parseArgs();

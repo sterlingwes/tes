@@ -1,4 +1,4 @@
-import { stat, ErrorKind } from "deno";
+const { stat, ErrorKind } = Deno;
 
 export async function isLocalDirectory(path: string): Promise<boolean> {
 	// TODO: Check that it is local first.
